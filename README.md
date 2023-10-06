@@ -37,6 +37,10 @@ METHOD: GET, RUTA: **estaciones**
 
 METHOD: PUT, RUTA: **estacion/{nombreEstacion}**
 
-### Obtener todas las estaciones en una ubicación
+### Obtener todas las estaciones en una ubicación.
 
 METHOD: GET, RUTA: **estaciones/{ubicacion}**
+
+### Crear una estación nueva.
+
+METHD: POST, RUTA: **estacion/{idEstacion}/{nombreEstacion}/{ubicacion}**
