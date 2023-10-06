@@ -8,4 +8,5 @@ public interface EstacionesService {
     List<Estacion> estaciones();
     Estacion buscarEstacionPorNombre(String nombreEstacion);
     List<Estacion> buscarEstacionesPorUbicacion(String ubicacion);
+    void altaEstacion(int idEstacion, String nombreEstacion, String ubicacion);
 }

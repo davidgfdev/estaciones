@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sinensia.railes.model.Estacion;
@@ -60,5 +61,21 @@ public class EstacionesController {
     @GetMapping(value = "estaciones/{ubicacion}")
     public List<Estacion> buscarEstacionesPorUbicacion(@PathVariable String ubicacion){
         return estacionesService.buscarEstacionesPorUbicacion(ubicacion);
+    }
+
+    /**
+     * Da de alta una nueva estación.
+     * 
+     * @param idEstacion
+     * @param nombreEstacion
+     * @param ubicacion
+     */
+    @PostMapping(value = "estacion/{idEstacion}/{nombreEstacion}/{ubicacion}")
+    public void altaEstacion(
+        @PathVariable int idEstacion,
+        @PathVariable String nombreEstacion,
+        @PathVariable String ubicacion
+    ){
+        estacionesService.altaEstacion(idEstacion, nombreEstacion, ubicacion);
     }
 }

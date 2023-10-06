@@ -42,4 +42,17 @@ public class EstacionesServiceImpl implements EstacionesService {
     public List<Estacion> buscarEstacionesPorUbicacion(String ubicacion) {
         return estacionesDao.findAllByUbicacion(ubicacion);
     }
+
+    /**
+     * Añade una nueva estación a BD.
+     * 
+     * @param idEstacion
+     * @param nombreEstacion
+     * @param ubicacion
+     */
+    @Override
+    public void altaEstacion(int idEstacion, String nombreEstacion, String ubicacion){
+        Estacion estacion = new Estacion(idEstacion, nombreEstacion, ubicacion);
+        estacionesDao.save(estacion);
+    }
 }
